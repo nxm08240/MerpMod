@@ -24,11 +24,11 @@ Run 'RestoreHEWTemplate.bat' and open MerpMod.hws with HEW. (If you make major c
 
 #Target ROM Selection
 
-To select your target ROM, you must create a placeholder (similar to an environment variable) for the ROM's CALID. TO do this, go to Setup->Customize->Placeholders
+To select your target ROM, you must set the target rom placeholder (similar to an environment variable) for the ROM's CALID. TO do this, go to Setup->Customize->Placeholders
 
-Add a placeholder for the following, substituting your CALID.
+The following placeholders should be set by default.
 Placeholder     Directory
-TARGETROM       CALID
+TARGETROM       <YOUR ROM'S CALID>
 TESTROMDIR      $(PROJDIR)\TestRom
 
 #EcuMapTools

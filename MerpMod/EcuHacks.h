@@ -40,6 +40,7 @@ SHORT TERM:
 #define TIMINGDATA __attribute__ ((section ("RomHole_TimingHackTables"),aligned(4)))
 #define SWITCHDATA __attribute__ ((section ("RomHole_MapSwitchTables"),aligned(4))) 
 #define FUELDATA __attribute__ ((section ("RomHole_POLFHackTables"),aligned(4))) 
+#define INJECTORDATA __attribute__ ((section ("RomHole_InjectorHackTables"),aligned(4)))
 #define BOOSTDATA __attribute__ ((section ("RomHole_BoostHackTables"),aligned(4)))
 
 //Select ECU Target!!

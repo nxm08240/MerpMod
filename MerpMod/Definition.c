@@ -389,6 +389,7 @@ DEFNEW3D("Knock Correction Retard Table 2",KnockCorrectionRetardTable2i);
 #endif
 
 #if INJECTOR_HACKS
+DEFNEW2D("Injector Flow Scaling 2D",InjectorScaling2D);//TODO MAKE SURE THIS WORKS, 2D had issues!!!
 #endif
 
 #if MEMORY_HACKS

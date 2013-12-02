@@ -61,14 +61,20 @@ pRamVariables->CruiseResumeLast = TestCruiseResumeSwitch();
 pRamVariables->CruiseCoastLast = TestCruiseCoastSwitch();
 #endif
 
-#if INJECTOR_HACKS
-	//Injector Scalar init to default
-	pRamVariables->InjectorScaling = *InjectorScalingOem;
-#endif
-
 #if SWITCH_HACKS
 	pRamVariables->MapSwitch = DefaultMapSwitch;
 	pRamVariables->MapBlendRatio = DefaultMapBlendRatio;
+		
+	#if INJECTOR_HACKS //TODO: UNIT TEST UPDATES
+		pRamVariables->InjectorScaling = Pull2DHooked(&InjectorScaling2D,pRamVariables->MapBlendRatio);
+	#endif
+
+#elif
+
+	#if INJECTOR_HACKS
+		pRamVariables->InjectorScaling = *InjectorScalingOem;
+	#endif
+
 #endif
 
 #if PROG_MODE

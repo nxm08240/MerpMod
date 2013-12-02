@@ -17,6 +17,10 @@
 
 float BlendAndSwitch(TableGroup tg, float xLookup, float yLookup)
 {
+	#if INJECTOR_HACKS
+		pRamVariables->InjectorScaling = Pull2DHooked(&InjectorScaling2D,pRamVariables->MapBlendRatio);
+	#endif
+			
 	float OutputValue;
 	if(pRamVariables->MapBlendRatio < 0.01)
 	{
@@ -82,7 +86,8 @@ void InputUpdate()
 	switch(BlendRatioInput)
 	{
 		case InputModeUndefined:
-		break;
+			pRamVariables->MapBlendRatio = DefaultMapBlendRatio;
+			break;
 		
 		case InputModeTGVLeft:
 			pRamVariables->MapBlendRatio = pRamVariables->TGVLeftScaled;
@@ -100,7 +105,8 @@ void InputUpdate()
 	switch(MapSwitchInput)
 	{
 		case InputModeUndefined:
-		break;
+			pRamVariables->MapSwitch = MapSwitch1;
+			break;
 		
 		#ifdef pSiDrive
 		case InputModeSiDrive:
@@ -108,20 +114,20 @@ void InputUpdate()
 			switch(*pSiDrive)
 		
 			case SiDriveSS:
-			pRamVariables->MapSwitch = MapSwitch3;
-			break;
+				pRamVariables->MapSwitch = MapSwitch3;
+				break;
 			
 			case SiDriveSSAlt:
-			pRamVariables->MapSwitch = MapSwitch3;
-			break;
+				pRamVariables->MapSwitch = MapSwitch3;
+				break;
 			
 			case SiDriveS:
-			pRamVariables->MapSwitch = MapSwitch2;
-			break;
+				pRamVariables->MapSwitch = MapSwitch2;
+				break;
 		
 			default:
-			pRamVariables->MapSwitch = MapSwitch1;
-			break;
+				pRamVariables->MapSwitch = MapSwitch1;
+				break;
 			}
 		}
 		#endif
@@ -135,8 +141,8 @@ void InputUpdate()
 			break;
 		
 		default:
-		pRamVariables->MapSwitch = DefaultMapSwitch;
-		break;
+			pRamVariables->MapSwitch = DefaultMapSwitch;
+			break;
 	}
 }
 

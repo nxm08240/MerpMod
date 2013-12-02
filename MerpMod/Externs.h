@@ -259,5 +259,9 @@ extern unsigned char BlendRatioInput;
 extern unsigned char MapSwitchInput;
 #endif
 
+#if INJECTOR_HACKS
+extern TwoDTable InjectorScaling2D;
+#endif
+
 extern long RomHoleEndMarker;
 extern unsigned char ModIdentifier[];

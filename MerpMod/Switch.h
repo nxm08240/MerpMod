@@ -33,7 +33,7 @@
 #define TIMING_HACKS 1		//
 #define POLF_HACKS 1		//	
 #define PGWG_HACKS 1		//
-#define INJECTOR_HACKS 0	//
+#define INJECTOR_HACKS 1	//
 							//
 //////////////////////////////
 							

@@ -465,6 +465,7 @@
       <subsection name="RomHole_RevLimTables" />
       <subsection name="RomHole_CelFlashTables" />
       <subsection name="RomHole_POLFHackTables" />
+	  <subsection name="RomHole_InjectorHackTables" />
       <subsection name="RomHole_BoostHackTables" />
       <subsection name="RomHole_TimingHackTables" />
       <subsection name="RomHole_MapSwitchTables" />

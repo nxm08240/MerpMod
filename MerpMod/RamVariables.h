@@ -21,19 +21,23 @@ typedef struct
 	unsigned char VinAuth;
 	unsigned char CruiseCoastLast;
 	unsigned char CruiseResumeLast;
+	unsigned char IdleLast;
+	unsigned char NeutralLast;
+	unsigned char DefoggerLast;
 	unsigned long ECUIdentifier;
-	unsigned char HardResetFlag;
-	unsigned char blank0;
-	unsigned char blank1;
-	unsigned char blank2;
 	
 #if VIN_HACKS
 	unsigned char VehicleIdent[20];
 #endif
 
-#if INJECTOR_HACKS
 	float InjectorScaling;
-#endif
+	float Mfempty;
+	float Mfempty1;
+	float Mfempty2;
+//	float Mfempty3;
+//	float Mfempty4;
+//	float Mfempty5;
+//	float Mfempty6;
 	
 #if SPARK_CUT
 	unsigned char SparkEventsX;
@@ -48,9 +52,6 @@ typedef struct
 
 #if SWITCH_HACKS
 	unsigned char MapSwitch;
-	unsigned char MapBlendingInputMode;
-	unsigned char MapSwitchingInputMode;
-	unsigned char swblank;
 	float MapBlendRatio;
 	float TGVLeftVolts;
 	float TGVRightVolts;
@@ -78,12 +79,13 @@ typedef struct
 	//Rev Limiter params
 	unsigned char  	RevLimInitFlag;  //96
 	unsigned char  	RevLimMode;
-	unsigned char	FlatFootShiftMode;
-	unsigned char	LCEngaged;
-	unsigned char	FFSEngaged;
-	unsigned char	ClutchSwitchLast;
-	unsigned char FFSGear;
+	char	FlatFootShiftMode;
+	char	LCEngaged;
+	char	FFSEngaged;
+	char	elemptteey;
+	char	elempty1;
 	char	eleemee2;
+	float	FFSGear;
 	float 	RevLimCut;	//96
 	float 	RevLimResume;
   	float  	RedLineCut;
@@ -114,7 +116,8 @@ typedef struct
 	unsigned char CelRepeatSwitch;
 	unsigned char CelFlashStatus;
 	unsigned char CelFlashDelay;
-	unsigned char celunused;
+	float ShiftLightRPM;
+
 	
 	//unsigned char CruiseSpeedCounter;			
 	//unsigned char CruiseFlashCounter;
@@ -122,7 +125,10 @@ typedef struct
 #endif
 
 #if PROG_MODE
-	unsigned char ProgModeStatus;
+	unsigned char ProgModeEnable;
+	unsigned char ProgModeTimer;
+	unsigned char ProgModeEntry;
+	unsigned char ProgModeWait;
 	unsigned char ProgModeCurrentMode;
 	unsigned char ProgModeValueFlashes;
 	unsigned char ValetMode;
@@ -132,18 +138,18 @@ typedef struct
 
 #if TIMING_HACKS
 	//Timing Hack params
-	unsigned char 	TimingHackInitFlag;		//97
-	unsigned char 	LCTimingMode;
-	unsigned char	TimingHackEnabled;
-	unsigned char	Tempty1;	
-	float	BaseTimingTarget;
-	float 	BaseTimingOutput;	//97
-	float 	LCTimingRetard;		//97
-	float 	LCTimingLock;		//97
-	float	LCTimingLockRPM;
-	float	LCTimingRetardMultiplier;
-	float	SubtractiveKCA;
-	float	MaxSubtractiveKCA;
+unsigned char TimingHackInitFlag; //97
+unsigned char LCTimingMode;
+unsigned char	TimingHackEnabled;
+unsigned char	Tempty1;
+//float	BaseTimingTarget;
+float BaseTimingOutput; //97
+float LCTimingRetard; //97
+float LCTimingLock; //97
+float	LCTimingLockRPM;
+float	LCTimingRetardMultiplier;
+float	SubtractiveKCA;
+float	MaxSubtractiveKCA;
 #endif
 
 #if POLF_HACKS
@@ -151,8 +157,8 @@ typedef struct
 	unsigned char 	POLFuelHackInitFlag;	//97
 	unsigned char 	LCFuelMode;
 	unsigned char	PolfHackEnabled;
-	unsigned char	Fempty1;	
-	float PolfTarget;
+	char	Fempty1;	
+//	float PolfTarget;
 	float PolfOutput;		//97
 	float LCFuelEnrich;			//97
 	float LCFuelLock;			//97
@@ -160,24 +166,16 @@ typedef struct
 #endif
 
 #if BOOST_HACKS	
-	unsigned char BoostHackEnabled;
-	unsigned char bhempty;
-	unsigned char bhempty1;
-	unsigned char bhempty2;
 	//Target Boost Params
-	float TargetBoostTarget;
-	float TargetBoostOutput;
+	float TargetBoost;
 		
 	//PGWG Params
-	float PGWGInitialComp;
-	float PGWGMaxComp;
+	float PGWGComp;
 	float PGTBComp;
 	
 	//WGDC Params
-	float WGDCInitialTarget;
-	float WGDCInitialOutput;
-	float WGDCMaxTarget;
-	float WGDCMaxOutput;
+	float WGDCInitial;
+	float WGDCMax;
 #endif
 	
 	
@@ -252,20 +250,41 @@ typedef struct
 	short WGDCMaxRamData[60];
 #endif
 
-#if PORT_LOGGER
-	unsigned char testchar1;
-	unsigned char testchar2;
-	unsigned char testchar3;
-	unsigned char testchar4;
-	unsigned short PortParameters[20];
-	unsigned short ADCParameters[40];
-	
-#endif
-
-#if RAM_HOLE_SCANNER
-	unsigned short ScannedAddress;
-	unsigned short ScannedValue;
-	unsigned long ScannedStackPointer;
+#if ALS_HACKS	
+	float TargetIdleSpeed;
+	unsigned char ALSModeWait;
+	unsigned char KillWait;
+	unsigned char DriveMode;
+	unsigned char KillMode;
+	unsigned char ALSEnable;
+	unsigned char ALSActive;
+	unsigned char TimerUp;
+//	unsigned char TimerUpA;
+//	unsigned char TimerUpB;
+//	unsigned char TimerUpC;	
+	unsigned char FlexCount;
+	unsigned char FuelUp;
+	unsigned char FuelCheckSwitch;
+	unsigned char FuelLevelSwitch;
+	unsigned char FlexLearnHasRun;
+	unsigned char FlexWait;
+	unsigned char ALSempty1;
+	unsigned char ALSempty2;
+	unsigned char ALSempty3;
+//	unsigned char IdleMapSelect;
+	float RequestedTorque;
+//	float TimerSeconds;
+//	float TimerMinutes;
+	float StartTimer;
+//	float StartTimerA;
+//	float StartTimerB;
+//	float StartTimerC;
+	float FlexFuelRatio;
+	float FuelCheck1;
+	float FuelCheck2;
+	float FuelLevel1;
+	float FuelLevel2;
+	float FuelLevel3;
 #endif
 
 long	RamHoleSpace;

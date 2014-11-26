@@ -16,14 +16,14 @@
 
 #if SWITCH_HACKS
 
-unsigned char DefaultMapSwitch SWITCHDATA = MapSwitch1;
+unsigned char DefaultMapSwitch SWITCHDATA = 0x02;
 float DefaultMapBlendRatio SWITCHDATA = 0.0f;
 
 float MapSwitchThresholdLo SWITCHDATA = 1.5f;
 float MapSwitchThresholdHi SWITCHDATA = 3.5f;
 
-unsigned char DefaultMapBlendingInputMode SWITCHDATA = MapBlendingInputModeUndefined;
-unsigned char DefaultMapSwitchingInputMode  SWITCHDATA = MapSwitchingInputModeUndefined;
+unsigned char BlendRatioInput SWITCHDATA = 0x00;
+unsigned char MapSwitchInput  SWITCHDATA = 0x00;
 
 
 

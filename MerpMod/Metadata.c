@@ -573,7 +573,7 @@ const MetaReplace WGDCHook METADATA =
 //INJECTOR HACKS	//
 //					//
 //////////////////////
-/*
+
 	const MetaReplace InjectorHook METADATA =
 	{
 		op: OpReplace4Bytes,
@@ -582,7 +582,7 @@ const MetaReplace WGDCHook METADATA =
 		newval: (int)&(pRamVariables->InjectorScaling),
 		name: STR(Injector Scalar Hook)
 	};
-	*/
+	
 #endif
 
 #if ALS_HACKS
@@ -672,9 +672,17 @@ const MetaReplace WGDCHook METADATA =
 	{
 		op: OpReplace4Bytes,
 		address: hAVCS,
-		oldval: pAVCS,
-		newval: (int)&(pRamVariables->AVCS),
+		oldval: sPull3DFloat,
+		newval: (int)Pull3DRamHook,
 		name: STR(Pull AVCS Hook)
+	};
+	const MetaReplace AVCSHookPull METADATA =
+	{
+		op: OpReplace4Bytes,
+		address: hTableAVCS,
+		oldval: tAVCS,
+		newval: (int)&(pRamVariables->AVCS),
+		name: STR(Pull AVCS Table Hook)
 	};
 */
 	const MetaReplace RequestedTorqueAHookPull METADATA =

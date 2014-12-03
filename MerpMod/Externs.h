@@ -38,7 +38,7 @@ void ResetRamVariables() ROMCODE;
 void InitRamVariables() ROMCODE;
 
 void EcuHacksMain() ROMCODE;
-void EcuHacksMainRPM() ROMCODE;
+void RevLimHook() ROMCODE;
 
 float ComputeMassAirFlow(TwoDTable* MafScalingTable, float MafVoltage)  ROMCODE;
 float CallSpeedDensityHook()  ROMCODE;
@@ -61,10 +61,10 @@ void FlexFineCorrect() ROMCODE;
 void ALSActivate() ROMCODE;
 void MemoryHardReset() ROMCODE;
 void Timer(float Minutes, float Seconds) ROMCODE;
-//void Timers(float Minutes, float Seconds, unsigned char Number) ROMCODE;
-//void TimerA(float Minutes, float Seconds) ROMCODE;
-//void TimerB(float Minutes, float Seconds) ROMCODE;
-//void TimerC(float Minutes, float Seconds) ROMCODE;
+void Timers(float Minutes, float Seconds, unsigned char Number) ROMCODE;
+void Timer1(float Minutes, float Seconds) ROMCODE;
+void Timer2(float Minutes, float Seconds) ROMCODE;
+void Timer3(float Minutes, float Seconds) ROMCODE;
 float TimingHack()  ROMCODE;
 float Pull2DRamHook(float* table, float xLookup) ROMCODE;
 float Pull3DRamHook(float* table, float xLookup, float yLookup) ROMCODE;
@@ -90,6 +90,11 @@ void SetClutch(int value) __attribute__ ((section ("Misc")));
 void SetBrake(int value) __attribute__ ((section ("Misc")));
 
 float Abs(float input) ROMCODE;
+float LowPass(float input, float limit) ROMCODE;
+float HighPass(float input, float limit) ROMCODE;
+float BandPass(float input, float lowlim, float highlim) ROMCODE;
+int BandPassInt(int input, int lowlim, int highlim) ROMCODE;
+float Smooth(float smoothingFactor, float input, float previous) ROMCODE;
 
 void RevLimCode(void) ROMCODE;
 void RevLimReset(void) ROMCODE;
@@ -127,6 +132,7 @@ extern ThreeDTable TemperatureCompensationTable;
 extern ThreeDTable AtmosphericCompensationTable;
 extern ThreeDTable SDBlendingTable;
 
+extern TwoDTable InjectorScalingTable;
 
 extern unsigned char DefaultPolfHackEnabled;
 extern TableGroup FuelTableGroup;
@@ -147,6 +153,10 @@ extern ThreeDTable ReqTorqTable1v;
 extern ThreeDTable ReqTorqTable1i;
 extern ThreeDTable ReqTorqTable1s;
 extern ThreeDTable ReqTorqTable1ss;
+
+extern TableGroup AVCSTableGroup;
+extern ThreeDTable AVCSTable1;
+extern ThreeDTable AVCSTable2;
 
 extern TableGroup PGWGTableGroup;
 extern ThreeDTable PGWGTable1i;
@@ -194,7 +204,7 @@ extern ThreeDTable WGDCMaxRamTable;
 
 
 extern unsigned char DefaultTimingHackEnabled;
-extern float PGTimingComp;
+extern float PGHighGearsTimingComp;
 extern TableGroup TimingTableGroup;
 extern ThreeDTable TimingTable1i;
 extern ThreeDTable TimingTable2i;
@@ -210,6 +220,9 @@ extern ThreeDTable KnockCorrectionRetardTable1s;
 extern ThreeDTable KnockCorrectionRetardTable2s;
 extern ThreeDTable KnockCorrectionRetardTable1ss;
 extern ThreeDTable KnockCorrectionRetardTable2ss;
+
+extern ThreeDTable FirstGearTimingAdditiveTable;
+extern ThreeDTable SecondGearTimingAdditiveTable;
 
 extern ThreeDTable LCTimingRetardTable;
 
@@ -271,18 +284,19 @@ extern float EGTCelLoadThreshold;
 extern float EGTResistanceThreshold;
 
 extern unsigned char ShiftLightFlashes;
+extern float DefaultShiftLightRPM;
 extern unsigned char ShiftLightFlashSpeed;
 extern unsigned char KillModeFlashes;
 extern unsigned char KillModeFlashSpeed;
+extern unsigned char FlexLearnFlashes;
+extern unsigned char FlexLearnFlashSpeed;
 extern ThreeDTable ShiftLightRPMs;
 
 
 #if ALS_HACKS
-extern float TargetIdleSpeed;
 extern float DefaultALSBoostLimit;
 extern float DefaultALSFuelLock;
 extern float DefaultALSTimingLock;
-extern float RequestedTorque;
 extern float DefaultALSTargetIdleSpeed;
 extern float FuelRatio1;
 extern float FuelRatio2;
@@ -300,6 +314,7 @@ extern float FlexFineFTs;
 extern float FlexRoughRatio;
 extern float FlexFineRatio;
 extern float FuelCheckWaitTime;
+extern float FlexRatioUserJump;
 
 #endif
 

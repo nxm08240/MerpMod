@@ -239,6 +239,12 @@ DEFINERAMVAR("MM TGV Right Scaled",TGVRightScaled,4,"E");
 
 DEFNEW1D("Default Map Blending Ratio",DefaultMapBlendRatio);
 DEFNEW1D("Default Map Switch",DefaultMapSwitch);
+
+#if INJECTOR_HACKS
+DEFNEW2D("Map Blending Injector Scaling",InjectorScalingTable);
+//DEFINERAMVAR("MerpMod Injector Scaling",InjectorScaling,"4","E");
+#endif
+
 #endif
 
 #if POLF_HACKS
@@ -403,6 +409,9 @@ DEFNEW3D("Knock Correction Retard Table 1 Sport",KnockCorrectionRetardTable1s);
 DEFNEW3D("Knock Correction Retard Table 2 Sport",KnockCorrectionRetardTable2s);
 DEFNEW3D("Knock Correction Retard Table 1 Sport Sharp",KnockCorrectionRetardTable1ss);
 DEFNEW3D("Knock Correction Retard Table 2 Sport Sharp",KnockCorrectionRetardTable2ss);
+DEFNEW3D("First Gear Timing Additive Table",FirstGearTimingAdditiveTable);
+DEFNEW3D("Second Gear Timing Additive Table",SecondGearTimingAdditiveTable);
+DEFNEW1D("Timing Comp for High Gears (3-6)",PGHighGearsTimingComp);
 #else
 DEFNEW3D("Base Timing Table 1",TimingTable1i);
 DEFNEW3D("Base Timing Table 2",TimingTable2i);
@@ -468,7 +477,10 @@ DEFNEW1D("Fine Correcting Fuel Trim",FlexFineFTs);
 DEFNEW1D("Fuel Check Wait Time",FuelCheckWaitTime);
 DEFNEW1D("Fuel Check Ratio 1",FuelRatio1);
 DEFNEW1D("Fuel Check Ratio 2",FuelRatio2);
-//DEFNEW1D("User Ratio",FlexRatioUserJump);
+DEFNEW1D("User Ratio",FlexRatioUserJump);
+DEFNEW3D("Intake Cam Advance Angle (AVCS) Table 1",AVCSTable1);
+DEFNEW3D("Intake Cam Advance Angle (AVCS) Table 2",AVCSTable2);
+
 #endif
 
 #if TIMING_RAMTUNING

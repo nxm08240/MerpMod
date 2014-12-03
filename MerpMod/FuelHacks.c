@@ -18,11 +18,11 @@
 
 void InjectorHack(){
 
-//float OutputValue;
+float OutputValue;
 
-//OutputValue = Pull2DHooked(&InjectorScalingTable,pRamVariables->MapBlendRatio);
+OutputValue = Pull2DHooked(&InjectorScalingTable,pRamVariables->MapBlendRatio);
 
-//pRamVariables->InjectorScaling = OutputValue;
+pRamVariables->InjectorScaling = OutputValue;
 
 }
 
@@ -78,9 +78,13 @@ EcuHacksMain();
 #endif
 	
 		if(pRamVariables->PolfHackEnabled == HackEnabled)
-			pRamVariables->PolfOutput = OutputValue;
+			{
+				pRamVariables->PolfOutput = OutputValue;
+			}
 		else
-			pRamVariables->PolfOutput = Pull3DHooked((void*)PrimaryOEMPolfTable, *pEngineLoad, *pEngineSpeed);	
+			{
+				pRamVariables->PolfOutput = Pull3DHooked((void*)PrimaryOEMPolfTable, *pEngineLoad, *pEngineSpeed);
+			}	
 #endif
 		
 	PolfHooked();

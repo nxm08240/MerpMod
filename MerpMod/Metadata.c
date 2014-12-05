@@ -671,7 +671,7 @@ const MetaReplace WGDCHook METADATA =
 	const MetaReplace AVCSHookPull METADATA =
 	{
 		op: OpReplace4Bytes,
-		address: hAVCS,
+		address: hPullAVCS,
 		oldval: sPull3DFloat,
 		newval: (int)Pull3DRamHook,
 		name: STR(Pull AVCS Hook)
@@ -691,7 +691,7 @@ const MetaReplace WGDCHook METADATA =
 		address: hPullRequestedTorqueA,
 		oldval: sPull3DFloat,
 		newval: (int)Pull3DRamHook,
-		name: STR(Requested Torque Table Hook)
+		name: STR(Requested Torque Table Pull Hook)
 	} ;
 
 	const MetaReplace RequestedTorqueAHookTable METADATA =
@@ -703,6 +703,31 @@ const MetaReplace WGDCHook METADATA =
 		name: STR(Requested Torque Table A Hook)
 	};
 
+//////////////////////
+//					//
+//SSM HACKS			//
+//					//
+//////////////////////
+
+/*
+	const MetaReplace SSMMapRatio METADATA =
+	{
+		op: OpReplace4Bytes,
+		address: hTableRequestedTorqueA,//RearO2Sensor??
+		oldval: tRequestedTorqueA,
+		newval: (int)&(pRamVariables->MapBlendRatio),
+		name: STR(Requested Torque Table A Hook)
+	};
+
+	const MetaReplace SSMMapSwitch METADATA =
+	{
+		op: OpReplace4Bytes,
+		address: hTableRequestedTorqueA,
+		oldval: tRequestedTorqueA,
+		newval: (int)&(pRamVariables->MapSwitch),
+		name: STR(Requested Torque Table A Hook)
+	};
+*/
 
 #endif
 

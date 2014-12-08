@@ -53,6 +53,7 @@ void DriveModeHack()  ROMCODE;
 void LoadFuelLevels() ROMCODE;
 void CheckFuelLevels() ROMCODE;
 void FuelUp() ROMCODE;
+void ALSRamTuning() ROMCODE;
 void Mileage() ROMCODE;
 void FlexLearn() ROMCODE;
 void FlexRatioUser() ROMCODE;
@@ -324,6 +325,12 @@ extern float LeanCruiseLoadThreshold;
 extern TwoDTable O2SensorScalingMPGTable;
 extern float ALSWGDC;
 extern float ALSAVCS;
+extern float DefaultALSPOLFRamTuning;
+extern float DefaultALSTimingRamTuning;
+extern float DefaultALSAVCSRamTuning;
+extern float ALSTimingRamTuningAdder;
+extern float ALSPOLFRamTuningAdder;
+extern float ALSAVCSRamTuningAdder;
 
 #endif
 

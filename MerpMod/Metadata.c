@@ -573,7 +573,7 @@ const MetaReplace WGDCHook METADATA =
 //INJECTOR HACKS	//
 //					//
 //////////////////////
-
+/*
 	const MetaReplace InjectorHook METADATA =
 	{
 		op: OpReplace4Bytes,
@@ -582,7 +582,7 @@ const MetaReplace WGDCHook METADATA =
 		newval: (int)&(pRamVariables->InjectorScaling),
 		name: STR(Injector Scalar Hook)
 	};
-	
+*/	
 #endif
 
 #if ALS_HACKS
@@ -591,6 +591,7 @@ const MetaReplace WGDCHook METADATA =
 //ANTILAG HACKS	//
 //					//
 //////////////////////
+
 	const MetaReplace TargetIdleSpeedHookPull METADATA =
 	{
 		op: OpReplace4Bytes,
@@ -676,12 +677,28 @@ const MetaReplace WGDCHook METADATA =
 		newval: (int)Pull3DRamHook,
 		name: STR(Pull AVCS Hook)
 	};
-	const MetaReplace AVCSHookPull METADATA =
+	const MetaReplace AVCSTableHookPull METADATA =
 	{
 		op: OpReplace4Bytes,
 		address: hTableAVCS,
 		oldval: tAVCS,
 		newval: (int)&(pRamVariables->AVCS),
+		name: STR(Pull AVCS Table Hook)
+	};
+	const MetaReplace FrontO2HookPull METADATA =
+	{
+		op: OpReplace4Bytes,
+		address: hPullO2SensorScaling,
+		oldval: sPull2DFloat,
+		newval: (int)Pull2DRamHook,
+		name: STR(Pull AVCS Hook)
+	};
+	const MetaReplace FrontO2TableHookPull METADATA =
+	{
+		op: OpReplace4Bytes,
+		address: hTableO2SensorScaling,
+		oldval: tO2SensorScaling,
+		newval: (int)&(pRamVariables->TargetCLAFR),
 		name: STR(Pull AVCS Table Hook)
 	};
 */

@@ -80,6 +80,7 @@ void EcuHacksMain() //Constant Hz main routine, hooked into wgdc lookup
 	FuelUp();
 	ALSActivate();
 	MemoryHardReset();
+	Mileage();
 #endif	
 
 #if PORT_LOGGER

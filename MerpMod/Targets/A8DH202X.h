@@ -1,4 +1,4 @@
-#define MOD_DATE 14.1.1.1100
+#define MOD_DATE 15.1.6.1100
 
 #include "Switch.h"
 #define MOD_CONFIG Switch

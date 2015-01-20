@@ -1,4 +1,4 @@
-#define MOD_DATE 15.1.7.1300
+#define MOD_DATE 15.1.20.1053
 
 #include "Switch.h"
 #define MOD_CONFIG Switch
@@ -175,6 +175,9 @@
 #define pAf1Res ((float*)0xFFFF5F08)
 #define pDeltaMap ((float*)0xFFFF668C)
 #define pAcceleratorPedal ((float*)0xFFFF68E4)
+#define pThrottlePlateTarget ((float*)0xFFFF7AE8)
+#define tTargetThrottlePlateA (0x00096498)
+#define hTableTargetThrottlePlateA (0x000BE734)
 #define pTargetIdleSpeed ((float*)0xFFFF7C3C)
 #define hPullTargetIdleSpeed (0x00042EB8)
 #define hTableTargetIdleSpeedA (0x00042EBC)

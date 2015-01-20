@@ -64,9 +64,8 @@ EcuHacksMain();
 		//Now run existing code!
 		
 #if ALS_HACKS
-	if (pRamVariables->ALSActive == 1)
+	if (pRamVariables->ALSActive == 2 || pRamVariables->ALSActive == 4)
 		{
-			pRamVariables->OpenLoopAFRmin = dOpenLoopAFRmin;
 			OutputValue = DefaultALSFuelLock;
 #if ALS_RAMTUNING
 			OutputValue += pRamVariables->ALSPOLFRamTuning;
@@ -75,7 +74,6 @@ EcuHacksMain();
 	else
 		{
 #endif
-			pRamVariables->OpenLoopAFRmin = OpenLoopAFRmin;
 			OutputValue *= PGFuelComp;
 			
 #if ALS_HACKS

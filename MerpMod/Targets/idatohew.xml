@@ -508,6 +508,10 @@
 <define name="pCyl4SparkCut"/>
 <define name="pTargetTPSIdle"/>
 <define name="hTargetTPSIdle"/>
+<define name="hAfterAD"/>
+<define name="sAfterAD"/>
+<define name="pPedalVoltage"/>
+<define name="pSubPedalVoltage"/>
 
 
     </category>

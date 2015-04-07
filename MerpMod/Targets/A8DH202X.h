@@ -1,4 +1,4 @@
-#define MOD_DATE 15.4.7.911
+#define MOD_DATE 15.4.7.1911
 
 #include "Switch.h"
 #define MOD_CONFIG Switch
@@ -244,6 +244,7 @@
 //#define hAfterReloadAD (0x000066b8)
 #define pPedalVoltage ((short*)0xFFFF5c00)
 #define pSubPedalVoltage ((short*)0xFFFF5c02)
+#define pTargetIdleAir ((float*)0xFFFF7b6c)
 
 
 /////////////////////

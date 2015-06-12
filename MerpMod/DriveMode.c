@@ -23,7 +23,28 @@ void DriveModeHack()
 		unsigned char NewDriveMode;
 		unsigned char KillWait = pRamVariables->KillWait;
 		unsigned char ModeWait = pRamVariables->ALSModeWait;
-
+		
+		if (pRamVariables->ALSModeWait == 1)
+			{
+				*pMemorizedCruiseSpeed = 0.00;//IMPLEMENT!
+			}
+		else
+			{
+			}
+			
+		if (!TestCruiseMasterSwitch())
+			{
+				pRamVariables->StartTimer4 = 0.00;
+			}
+		else if (TestCruiseMasterSwitch() && pRamVariables->ALSModeWait != 1)
+			{
+				Timers(0.0, 2.0, 4);
+			}
+		else
+			{
+				pRamVariables->StartTimer4 = 0.00;
+			}
+			
 		if (TestClutchSwitch() && TestDefoggerSwitch() && TestCruiseCoastSwitch() && TestBrakeSwitch())
 		{
 			if (KillWait == 0)

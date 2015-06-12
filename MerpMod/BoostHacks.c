@@ -150,7 +150,7 @@ void TargetBoostHack()
 		}
 /*		else if (pRamVariables->DriveMode < 3) // No boost error in econ mode
 		{
-			pRamVariables->TargetBoost = *pBoost; //?
+			pRamVariables->TargetBoost = *pCurrentBoost16bit; //BoostTarget(PSIrelativesealevel) = scalar
 		}
 */		else
 		{

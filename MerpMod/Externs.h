@@ -76,6 +76,7 @@ void Timers(float Minutes, float Seconds, unsigned char Number) ROMCODE;
 void Timer1(float Minutes, float Seconds) ROMCODE;
 void Timer2(float Minutes, float Seconds) ROMCODE;
 void Timer3(float Minutes, float Seconds) ROMCODE;
+void Timer4(float Minutes, float Seconds) ROMCODE;
 float TimingHack()  ROMCODE;
 void RotationalSparkCut() ROMCODE;
 float Pull2DRamHook(float* table, float xLookup) ROMCODE;

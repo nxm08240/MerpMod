@@ -367,9 +367,14 @@
 [WINDOW_POSITION_STATE_DATA_VD3]
 [WINDOW_POSITION_STATE_DATA_VD4]
 [WINDOW_Z_ORDER]
-"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\Wideband.c" 
-"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\TargetHeader.h" 
-"C:\Documents and Settings\Scott\Desktop\Disassembly" 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\EcuHacks.h" 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\Switch.h" 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\ResetHandler.s" 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\Metadata.c" 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\DriveMode.c" 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\ALSTables.c" 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\ALS.c" 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\Disassembly" 
 "{WK_00000001_OUTPUT} WINDOW" 
 [TARGET_NAME]
 "SH-2E Simulator" "" 0 

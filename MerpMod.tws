@@ -16,18 +16,16 @@
 "C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\Metadata.c" 
 "C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\ResetHandler.s" 
 "C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\Switch.h" 
-"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\TargetConfig.h" 
-"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\TargetHeader.h" 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\Wideband.c" 
 [WORKSPACE_FILE_STATES]
 "C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\ALS.c" 0 0 1216 846 0 2 
 "C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\ALSTables.c" 0 0 1043 846 0 3 
 "C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\DriveMode.c" 0 0 1524 941 0 4 
-"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\EcuHacks.h" -4 -30 1462 945 1 10 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\EcuHacks.h" 0 0 1462 945 0 8 
 "C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\Metadata.c" 0 0 1506 963 0 5 
 "C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\ResetHandler.s" 132 174 1234 621 0 6 
-"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\Switch.h" 198 261 1234 621 0 9 
-"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\TargetConfig.h" 154 203 1234 621 0 7 
-"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\TargetHeader.h" 176 232 1234 621 0 8 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\Switch.h" 198 261 1234 621 0 7 
+"C:\Documents and Settings\Scott\Desktop\ECUHacks\Git\MerpMod\MerpMod\Wideband.c" -4 -30 1462 945 1 9 
 [LOADED_PROJECTS]
 "MerpMod" 
 [END]
